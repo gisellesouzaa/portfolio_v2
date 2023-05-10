@@ -3,7 +3,6 @@
 :root{
     --background-body: #FFF9E7;
     --background-nav: #3A53E3;
-    --background-footer: #000000;
     --white: #FFFFFF;
     --gray: #C0C0C0;
     --yellow: #F8CD53;
@@ -42,11 +41,13 @@ h1 {
     padding-top: 2rem;
     padding-bottom: 2rem;
     text-align: left;
+    color: #f12711;
 }
 
 h2,
 h3 {
     text-align: center;
+    color: var(--blue);
 }
 
 h2 {
@@ -73,12 +74,15 @@ hr {
 nav {
     margin: 0 auto;
     width: 80vw;
-    background-color: var(--background-nav);
+    /* background-color: var(--background-nav); */
     display: flex;
     justify-content: space-between;
     font-size: 1.5rem ;
     padding: 2.25rem 1.5rem;
     box-shadow: 2px 2px 5px var(--gray);
+    background: #f12711; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f12711, #f5af19); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 nav a {
@@ -126,17 +130,26 @@ main {
 #sobre {
     display: flex;
     align-items: center;
-    background-color: var(--yellow);
+    background-color: ;
     padding: 20px;
     border-radius: 16px;
     align-items: center;
     gap: 20px;
+    background: var(--yellow);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var(--yellow), #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--yellow), #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .foto {
     width: 200px;
     border-radius: 20px;
-    box-shadow: 2px 2px 5px var(--gray);
+    box-shadow: 2px 2px 5px var(--blue);
+}
+
+.foto:hover {
+    box-shadow: 5px 5px 8px var(--background-nav);
+    cursor: pointer;
 }
 
 #meu_video {
@@ -152,6 +165,17 @@ main {
     margin-top: 2rem;
 }
 
+.infos {
+    padding: 5%;
+    text-align: center;
+    align-items: center;
+    color: var(--blue);
+    color: var(--background-nav);
+    font-weight: bold;
+
+    
+}
+
 footer{
     width: 80vw;
     margin: 0 auto;
@@ -161,7 +185,11 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--background-footer);
+    /* background-color: var(--background-footer); */
+    background: var(--blue);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var(--yellow), #b21f1f, var(--blue));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--yellow), #b21f1f, var(--blue)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 
@@ -182,6 +210,8 @@ footer{
     width: 45px;
     padding: 0 0.5rem;
 }
+
+
 
 /*Página de Contato*/
 
@@ -242,6 +272,9 @@ button {
 button:hover {
     background-color: var(--blue);
     color: var(--yellow);
+    border: 1px solid #ffffff7d;
+    box-shadow:  #eb4c20 1px 1px 8px 1px; 
+    transition: .2s;
 }
 
 .campos-form {
