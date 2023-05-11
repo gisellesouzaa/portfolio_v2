@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Roboto:wght@100;500&display=swap%27');
 
-:root{
-    --background-body: #FFF9E7;
+:root {
     --background-nav: #3A53E3;
     --white: #FFFFFF;
     --gray: #C0C0C0;
@@ -11,17 +10,17 @@
 
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color: var(--background-body);
+body {
+    background: linear-gradient(to bottom, #06060e, #100a1c, #7a0bc0, #ed4f0b);
 }
 
-p{
+p {
     font-family: 'lato', Roboto;
     margin-bottom: 1.5rem;
 }
@@ -42,11 +41,27 @@ h1 {
     padding-bottom: 2rem;
     text-align: left;
     color: #f12711;
+    animation: glow 2s ease-in infinite alternate;
+    -webkit-box-reflect: below 0px linear-gradient;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow:
+            0 0 2px #18e0ff,
+            0 0 3px #18e0ff,
+            0 0 5px #1827ff,
+            0 0 10px #1827ff;
+    }
 }
 
 h2,
 h3 {
     text-align: center;
+    color: var(--yellow);
+}
+
+#oigoku {
     color: var(--blue);
 }
 
@@ -74,15 +89,18 @@ hr {
 nav {
     margin: 0 auto;
     width: 80vw;
-    /* background-color: var(--background-nav); */
     display: flex;
     justify-content: space-between;
-    font-size: 1.5rem ;
+    font-size: 1.5rem;
     padding: 2.25rem 1.5rem;
-    box-shadow: 2px 2px 5px var(--gray);
-    background: #f12711; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f12711, #f5af19); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 2px 2px 5px var(--background-nav);
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f12711, #f5af19);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 90px 90px 90px 90px;
 }
 
 nav a {
@@ -130,26 +148,68 @@ main {
 #sobre {
     display: flex;
     align-items: center;
-    background-color: ;
     padding: 20px;
     border-radius: 16px;
     align-items: center;
     gap: 20px;
-    background: var(--yellow);  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, var(--yellow), #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, var(--yellow), #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: var(--yellow);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var(--yellow), #F2994A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--yellow), #F2994A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
-.foto {
+#foto {
     width: 200px;
     border-radius: 20px;
     box-shadow: 2px 2px 5px var(--blue);
+    animation: zoom-in-zoom-out 3s ease-out infinite;
 }
 
-.foto:hover {
-    box-shadow: 5px 5px 8px var(--background-nav);
+.fotoContainer:hover #foto {
+    box-shadow: 3px 3px 5px var(--background-nav);
     cursor: pointer;
+    animation: rotate 10s ease-out infinite;
+}
+
+@keyframes rotate {
+    
+    0% {
+        transform: rotateY(0);
+    }
+
+    50% {
+        transform: rotateY(720deg * 2);
+    }
+
+    100% {
+        transform: rotateY(1080deg);
+    }
+}
+
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+
+#fotoContato {
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px var(--blue);
+
 }
 
 #meu_video {
@@ -169,14 +229,13 @@ main {
     padding: 5%;
     text-align: center;
     align-items: center;
-    color: var(--blue);
     color: var(--background-nav);
     font-weight: bold;
 
-    
+
 }
 
-footer{
+footer {
     width: 80vw;
     margin: 0 auto;
     padding-top: 1rem;
@@ -186,10 +245,13 @@ footer{
     justify-content: center;
     align-items: center;
     /* background-color: var(--background-footer); */
-    background: var(--blue);  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, var(--yellow), #b21f1f, var(--blue));  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, var(--yellow), #b21f1f, var(--blue)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: var(--blue);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var(--yellow), #b21f1f, var(--blue));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--yellow), #b21f1f, var(--blue));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 90px 90px 0px 0px;
 }
 
 
@@ -236,6 +298,7 @@ label {
     font-family: 'lato', Roboto;
     margin-left: 1rem;
     font-weight: bold;
+    color: var(--yellow);
 }
 
 input,
@@ -273,7 +336,7 @@ button:hover {
     background-color: var(--blue);
     color: var(--yellow);
     border: 1px solid #ffffff7d;
-    box-shadow:  #eb4c20 1px 1px 8px 1px; 
+    box-shadow: #eb4c20 1px 1px 8px 1px;
     transition: .2s;
 }
 
@@ -283,7 +346,7 @@ button:hover {
 
 @media (max-width: 1000px) {
 
-    nav{
+    nav {
         width: 100vw;
         flex-direction: column;
         row-gap: 1rem;
@@ -296,11 +359,11 @@ button:hover {
         width: 100vw;
     }
 
-    .titulo{
+    .titulo {
         text-align: center;
     }
 
-    main{   
+    main {
         width: 95vw;
     }
 
@@ -309,7 +372,7 @@ button:hover {
         text-align: center;
     }
 
-    .foto {
+    #foto {
         margin-top: 1rem;
     }
 
@@ -321,7 +384,7 @@ button:hover {
         width: 95vw;
     }
 
-    footer{
+    footer {
         width: 100vw;
     }
 

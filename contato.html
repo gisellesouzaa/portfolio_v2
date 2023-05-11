@@ -36,10 +36,10 @@
 
         <div id="sobre">
             <div>
-                <a href="index.html">
-                    <img class="foto" src="assets/images/goku.gif" alt="Olá, eu sou o Goku">
-                </a>
-                <h3>Oi, Eu sou o Goku!</h3>
+                <!-- <a href="index.html"> -->
+                    <img id="fotoContato" src="assets/images/goku.gif" alt="Olá, eu sou o Goku">
+                <!-- </a> -->
+                <h3 id="oigoku">Oi, Eu sou o Goku!</h3>
                 <!-- <p class="infos">Utilize o formulário ao lado para me enviar uma mensagem!</p> -->
             </div>
         </div>
@@ -51,13 +51,14 @@
 
                 <div class="campos-form">
                     <label for="nome">Nome:</label>
-                    <input id="nome" type="text" placeholder="Insira o seu nome completo">
+                    <input oninput="validarNome()" id="nome" type="text" placeholder="Insira o seu nome completo">
                     <div id="txtNome"></div>
                 </div>
+                <!-- onkeyup oninput -->
 
                 <div class="campos-form">
                     <label for="email">E-mail:</label>
-                    <input id="email" type="text" placeholder="Insira o seu e-mail">
+                    <input oninput="validarEmailRegEx()" id="email" type="text" placeholder="Insira o seu e-mail">
                     <div id="txtEmail"></div>
                 </div>
 
@@ -67,7 +68,7 @@
                     <div id="txtMensagem"></div>
                 </div>
 
-                <button type="button">
+                <button onclick="enviarFormulario()" type="button">
                     Enviar
                 </button>
             </form>
@@ -80,11 +81,11 @@
 
                 <div class="campos-form">
                     <label for="cep">CEP:</label>
-                    <input id="cep" type="text" placeholder="Digite o número do CEP">
+                    <input oninput="validarCep()" id="cep" type="text" placeholder="Digite o número do CEP">
                     <div id="txtCep"></div>
                 </div>
 
-                <button type="button">
+                <button onclick="consultarCep()" type="button">
                     Consultar
                 </button>
 
@@ -119,6 +120,7 @@
         <p class="by">Desenvolvido por: Giselle Souza - 2023 &copy;</p>
 
     </footer>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
