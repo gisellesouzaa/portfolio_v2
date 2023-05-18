@@ -9,7 +9,7 @@ Esse foi o primeiro site desenvolvido durante o bloco III do bootcamp de Pessoa 
 </p>
 
 <h1 align="center">
-  <img alt="Gif do projeto" src="PortfolioGoku.gif" />
+  <img alt="Gif do projeto" src="./PortfolioGoku.gif" />
 </h1>
 
 ### Tecnologias Padrão:
